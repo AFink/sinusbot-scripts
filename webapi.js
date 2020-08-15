@@ -128,11 +128,11 @@ registerPlugin({
             return res.getData();
         }
         if (config.move != 1) {
-            console.log(ev.data())
             const move = backend.getBotClient().moveTo(ev.data().id, ev.data().password);
-            console.log(move);
-            engine.log(`Move Triggered with id: ${ev.data().id} and password: ${ev.data().password}`);
-            res.setData("The bot has moved his channel.");
+            if (config.debug == 1) {
+                engine.log(`Move Triggered with id: ${ev.data().id} and password: ${ev.data().password}`);
+            }
+            res.setData("The bot has been requested to move its channel");
             return res.getData();
         } else {
             if (config.debug == 1) {
