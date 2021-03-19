@@ -168,10 +168,10 @@ registerPlugin({
                         return found;
                     });
                     if (conf.whiteBlackListOption == 1 && !found) {
-                        return console.log(`not sending message to ${event.client.name()} because of whitelist`);
+                        return; //console.log(`not sending message to ${event.client.name()} because of whitelist`);
                     }
                     if (conf.whiteBlackListOption == 2 && found) {
-                        return console.log(`not sending message to ${event.client.name()} because of blacklist`);
+                        return; //console.log(`not sending message to ${event.client.name()} because of blacklist`);
                     }
                 }
             }
